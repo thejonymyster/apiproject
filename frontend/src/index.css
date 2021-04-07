@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: black;
+  color: white;
 }
 
 code {
@@ -15,9 +17,35 @@ code {
 
 nav {
   display:flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-content: left;
+  padding: 5px;
 }
 
 input {
   font-size: 1rem;
+}
+
+.centertext {
+  text-align: center;
+}
+
+.snugify {
+  width: 80vw;
+  max-width: 500px;
+  /* border: thin solid white; */
+}
+
+.centerhelp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+.spacer {
+  height: 30px;
 }

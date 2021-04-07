@@ -9,6 +9,7 @@ import Profile from './components/Profile'
 import actions from './api'
 import { Switch, Route, Link, useHistory } from 'react-router-dom'
 import TheContext from './TheContext'
+import Musictest from './components/playmusictest.js'
 
 
 
@@ -25,7 +26,9 @@ function App() {
   const history = useHistory()
 
   return (
-    <TheContext.Provider value={{ user, setUser, history }}>
+
+    <>
+      <TheContext.Provider value={{ user, setUser, history }}>
       <div className="App">
         <nav>
           <Link to="/">Home Icon</Link>
@@ -37,6 +40,13 @@ function App() {
 
       </div>
     </TheContext.Provider>
+
+      
+      
+      
+      <Musictest /> 
+    </>
+    
   );
 }
 
