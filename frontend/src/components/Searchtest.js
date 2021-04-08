@@ -5,7 +5,8 @@ class Searchtest extends Component {
       return(
           <>
             <div>
-                <input></input>
+                <input type="search"></input>
+                <button>Search!</button>
             </div>
           </>
       )
