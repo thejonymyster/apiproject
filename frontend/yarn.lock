@@ -7377,6 +7377,11 @@
     "schema-utils" "^1.0.0"
     "webpack-sources" "^1.1.0"
 
+"miniget@^4.2.0":
+  "integrity" "sha512-IzTOaNgBw/qEpzkPTE7X2cUVXQfSKbG8w52Emi93zb+Zya2ZFrbmavpixzebuDJD9Ku4ecbaFlC7Y1cEESzQtQ=="
+  "resolved" "https://registry.npmjs.org/miniget/-/miniget-4.2.0.tgz"
+  "version" "4.2.0"
+
 "minimalistic-assert@^1.0.0", "minimalistic-assert@^1.0.1":
   "integrity" "sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A=="
   "resolved" "https://registry.npmjs.org/minimalistic-assert/-/minimalistic-assert-1.0.1.tgz"
@@ -11916,3 +11921,10 @@
   "integrity" "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="
   "resolved" "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   "version" "0.1.0"
+
+"ytsr@^3.4.0":
+  "integrity" "sha512-/Ygk7lf+ZGI9fqp7us2PAyVtmNc5aGblQhtizOvU5L63L/9W7J9PQRoTq7XvGOMT/NWpYT6qhGFEror0UMw4FQ=="
+  "resolved" "https://registry.npmjs.org/ytsr/-/ytsr-3.4.0.tgz"
+  "version" "3.4.0"
+  dependencies:
+    "miniget" "^4.2.0"

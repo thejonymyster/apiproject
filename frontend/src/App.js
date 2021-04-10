@@ -42,12 +42,12 @@ function App() {
       </div>
     </TheContext.Provider>
 
-      
+      </>
     
       
-      <Musictest/> 
+      {/* <Musictest/> 
 
-      <APIThing MyUrl="https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=10&gsrsearch=%27Musical%20Artists%27"/>
+      <APIThing MyUrl="https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=10&gsrsearch=%27Musical%20Artists%27"/> */}
     </>
     
   );

@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import React, { useState, useEffect, useContext, Component } from 'react';
 
-function APIThing(props) {
+// function APIThing(props) {
     
     //Create a new object to interact with the server
     var xhr = new XMLHttpRequest();
@@ -39,8 +39,8 @@ function APIThing(props) {
     //     )
     // }
     
-    return null;
-}
+//     return null;
+// }
 
-// export default xhr;
-export default APIThing;
+export default xhr;
+// export default APIThing;
