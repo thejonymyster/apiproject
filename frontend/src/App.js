@@ -11,6 +11,7 @@ import { Switch, Route, Link, useHistory } from 'react-router-dom'
 import TheContext from './TheContext'
 import Musictest from './components/playmusictest.js'
 import APIThing from './components/wikitest.js'
+import Youtuber from './components/youtube'
 
 
 
@@ -42,12 +43,9 @@ function App() {
       </div>
     </TheContext.Provider>
 
-      </>
-    
+    <Youtuber/>
       
-      {/* <Musictest/> 
-
-      <APIThing MyUrl="https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=10&gsrsearch=%27Musical%20Artists%27"/> */}
+    
     </>
     
   );

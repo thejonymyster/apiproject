@@ -16,9 +16,10 @@ class Youtuber extends React.Component {
         this.setState({Input: event.target.value}) 
     }
 
-    handleSubmit(event) {
+    async handleSubmit(event) {
         event.preventDefault()
-        this.setState({Video: this.search(this.state.Input)}) 
+        // this.setState({Video: await this.search(this.state.Input)}) 
+        console.log(this.state.Input)
     }
 
     async search(term){
@@ -42,7 +43,10 @@ class Youtuber extends React.Component {
 
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={event => this.handleChange(event)}></input>
+                    <button>Surmit!</button>
                 </form>
+
+                <p>{this.state.Input}</p>
 
                 <div>
                     {/* steal frm wikipedia */}
