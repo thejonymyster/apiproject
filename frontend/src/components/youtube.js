@@ -10,6 +10,7 @@ class Youtuber extends React.Component {
             Input: null
         }
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     } 
 
     handleChange(event) {
@@ -18,8 +19,7 @@ class Youtuber extends React.Component {
 
     async handleSubmit(event) {
         event.preventDefault()
-        // this.setState({Video: await this.search(this.state.Input)}) 
-        console.log(this.state.Input)
+        this.setState({Video: await this.search(this.state.Input)}) 
     }
 
     async search(term){
