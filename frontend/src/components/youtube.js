@@ -19,18 +19,20 @@ class Youtuber extends React.Component {
 
     async handleSubmit(event) {
         event.preventDefault()
-        this.setState({Video: await this.search(this.state.Input)}) 
+        // console.log(ytsr(`Bosotn music`).replace(/&/g,"and%26"))
+        // console.log(this.search(this.state.Input))
+        // this.setState({Video: await this.search(this.state.Input)}) 
     }
 
     async search(term){
         let searchResults = await ytsr(`${term} music`);
-        return searchResults.items[0].id
+        // return searchResults.items[0].id
     }
 
     render(){
         return(
             <>
-                <div className="video-responsive">
+                {/* <div className="video-responsive">
                     <iframe
                     width="0"
                     height="0"
@@ -39,7 +41,7 @@ class Youtuber extends React.Component {
                     allow="autoplay"
                     title="Video"
                     />
-                </div>
+                </div> */}
 
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={event => this.handleChange(event)}></input>
