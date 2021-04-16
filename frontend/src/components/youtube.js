@@ -1,6 +1,7 @@
 import React from 'react';
 import ytsr from 'ytsr';
 import ReactDOM from 'react-dom';
+import APIThing from './wikitest';
 
 class Youtuber extends React.Component {
     constructor(props) {
@@ -21,27 +22,30 @@ class Youtuber extends React.Component {
         event.preventDefault()
         // console.log(ytsr(`Bosotn music`).replace(/&/g,"and%26"))
         // console.log(this.search(this.state.Input))
-        // this.setState({Video: await this.search(this.state.Input)}) 
+        this.setState({Video: await this.search(this.state.Input)}) 
     }
 
     async search(term){
         let searchResults = await ytsr(`${term} music`);
-        // return searchResults.items[0].id
+        return searchResults.items[0].id
     }
 
     render(){
         return(
             <>
-                {/* <div className="video-responsive">
+                <div className="video-responsive">
                     <iframe
-                    width="0"
-                    height="0"
-                    src={`https://www.youtube.com/embed/${this.state.Video}`}
+                    width="500"
+                    height="500"
+                    // src={`https://www.youtube.com/embed/${this.state.Video}`}
+                    src={`https://www.youtube.com/embed/${this.state.Input}`}
                     frameBorder="0"
                     allow="autoplay"
+                    controls="0"
                     title="Video"
+                    autoplay="1"
                     />
-                </div> */}
+                </div>
 
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={event => this.handleChange(event)}></input>
@@ -52,6 +56,7 @@ class Youtuber extends React.Component {
 
                 <div>
                     {/* steal frm wikipedia */}
+                    <APIThing term={`https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='${this.state.Input}_(Band)'`} />
                 </div>
             </>
         )
