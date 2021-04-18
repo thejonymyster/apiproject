@@ -1,63 +1,66 @@
 import React from 'react';
 import ytsr from 'ytsr';
 import ReactDOM from 'react-dom';
-import APIThing from './wikitest';
+import Form from "./Forms"
+import ReactPlayer from 'react-player'
 
 class Youtuber extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            post: {
+                name: ""
+            },
             Video: null,
             Input: null
         }
-        this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
     } 
 
-    handleChange(event) {
-        this.setState({Input: event.target.value}) 
+    handleChange = e => {
+        this.setState({Input: e.target.value})
     }
 
-    async handleSubmit(event) {
-        event.preventDefault()
-        // console.log(ytsr(`Bosotn music`).replace(/&/g,"and%26"))
-        // console.log(this.search(this.state.Input))
-        this.setState({Video: await this.search(this.state.Input)}) 
+    handleSubmit = e => {
+        // // e.preventDefault()
+        // // // console.log(ytsr(`Bosotn music`).replace(/&/g,"and%26"))
+        // // // console.log(this.search(this.state.Input))
+        // // this.setState({Video: e.target.value}) 
+
+        // e.preventDefault()
+        // this.setState(prevState => ({
+
+        // }))
+
+        e.preventDefault()
+
+        console.log(this.state.Input)
+
+        this.setState(prevState => ({
+            Video: prevState.Input,
+            post: { name: "" }
+        }))
     }
 
     async search(term){
         let searchResults = await ytsr(`${term} music`);
-        return searchResults.items[0].id
+        console.log(searchResults.items[0]) 
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <>
-                <div className="video-responsive">
-                    <iframe
-                    width="500"
-                    height="500"
-                    // src={`https://www.youtube.com/embed/${this.state.Video}`}
-                    src={`https://www.youtube.com/embed/${this.state.Input}`}
-                    frameBorder="0"
-                    allow="autoplay"
-                    controls="0"
-                    title="Video"
-                    autoplay="1"
-                    />
-                </div>
-
-                <form onSubmit={this.handleSubmit}>
-                    <input onChange={event => this.handleChange(event)}></input>
-                    <button>Surmit!</button>
-                </form>
-
-                <p>{this.state.Input}</p>
-
                 <div>
-                    {/* steal frm wikipedia */}
-                    <APIThing term={`https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=5&gsrsearch='${this.state.Input}_(Band)'`} />
+                    <ReactPlayer url={"https://www.youtube.com/watch?v=Ds14zhfHEvE"} />
                 </div>
+
+                <Form 
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit}
+                    Input={this.state.Input}              
+                />
+
+                <p>{this.state.Input}INPUT BAYBEE</p>
+                <p>{this.state.Video}VIDEO TEST</p>
             </>
         )
     }
