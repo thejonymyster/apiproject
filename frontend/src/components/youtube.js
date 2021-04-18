@@ -1,17 +1,14 @@
 import React from 'react';
-import ytsr from 'ytsr';
 import ReactDOM from 'react-dom';
 import Form from "./Forms"
 import ReactPlayer from 'react-player'
+import youtubeapi from './youtubeapi'
 
 class Youtuber extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            post: {
-                name: ""
-            },
-            Video: null,
+            Videos: [],
             Input: null
         }
     } 
@@ -20,30 +17,17 @@ class Youtuber extends React.Component {
         this.setState({Input: e.target.value})
     }
 
-    handleSubmit = e => {
-        // // e.preventDefault()
-        // // // console.log(ytsr(`Bosotn music`).replace(/&/g,"and%26"))
-        // // // console.log(this.search(this.state.Input))
-        // // this.setState({Video: e.target.value}) 
-
-        // e.preventDefault()
-        // this.setState(prevState => ({
-
-        // }))
-
+    handleSubmit = async (e) => {
         e.preventDefault()
-
-        console.log(this.state.Input)
-
-        this.setState(prevState => ({
-            Video: prevState.Input,
-            post: { name: "" }
-        }))
-    }
-
-    async search(term){
-        let searchResults = await ytsr(`${term} music`);
-        console.log(searchResults.items[0]) 
+        console.log(this.state)
+        const response = await youtubeapi.get('/search', {
+            params: {
+                q: e
+            }
+        })
+        this.setState({
+            Videos: response.data.items
+        })
     }
 
     render() {
@@ -60,7 +44,7 @@ class Youtuber extends React.Component {
                 />
 
                 <p>{this.state.Input}INPUT BAYBEE</p>
-                <p>{this.state.Video}VIDEO TEST</p>
+                <p>{this.state.Videos}VIDEO TEST</p>
             </>
         )
     }
