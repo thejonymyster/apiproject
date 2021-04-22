@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Form from "./Forms"
 import ReactPlayer from 'react-player'
 import youtubeapi from './youtubeapi'
+import APIThing from './wikitest'
 
 class Youtuber extends React.Component {
     constructor(props) {
@@ -45,6 +46,8 @@ class Youtuber extends React.Component {
 
                 <p>{this.state.Input}INPUT BAYBEE</p>
                 <p>{this.state.Videos}VIDEO TEST</p>
+                <APIThing term={`https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=10&gsrsearch='${this.state.Input} (band)'`}/>
+            
             </>
         )
     }

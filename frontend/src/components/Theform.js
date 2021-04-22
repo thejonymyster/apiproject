@@ -20,7 +20,7 @@ class Theform extends Component {
 
     handleChange() {
         //fix this obviously
-        this.setState({Input: })
+        this.setState({Input: "Test"})
     }
 
     // handleSubmit() = e => {
@@ -30,7 +30,7 @@ class Theform extends Component {
     render() {
         return <>
             <Form 
-                handleChange={this.handleChange(event.target.value)}
+                handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}           
             />
 

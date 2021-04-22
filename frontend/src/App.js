@@ -10,6 +10,7 @@ import actions from './api'
 import { Switch, Route, Link, useHistory } from 'react-router-dom'
 import TheContext from './TheContext'
 import Theform from './components/Theform'
+import Youtuber from './components/youtube';
 
 
 
@@ -41,9 +42,9 @@ function App() {
       </div>
     </TheContext.Provider>
 
-    <Theform/>
+    {/* <Theform/> */}
       
-    
+      <Youtuber/>
     </>
     
   );
