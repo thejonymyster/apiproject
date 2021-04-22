@@ -5,6 +5,11 @@ import ReactPlayer from 'react-player'
 import youtubeapi from './youtubeapi'
 import APIThing from './wikitest'
 
+function fix(n){
+    if (n){return "300px"}
+    return "0px"
+}
+
 class Youtuber extends React.Component {
     constructor(props) {
         super(props)
@@ -35,7 +40,7 @@ class Youtuber extends React.Component {
         return (
             <>
                 <div>
-                    <ReactPlayer url={"https://www.youtube.com/watch?v=Ds14zhfHEvE"} />
+                    {/* <ReactPlayer url={"https://www.youtube.com/watch?v=Ds14zhfHEvE"} /> */}
                 </div>
 
                 <Form 
@@ -44,10 +49,13 @@ class Youtuber extends React.Component {
                     Input={this.state.Input}              
                 />
 
-                <p>{this.state.Input}INPUT BAYBEE</p>
                 <p>{this.state.Videos}VIDEO TEST</p>
-                <APIThing term={`https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=10&gsrsearch='${this.state.Input} (band)'`}/>
-            
+                <p> Did you mean:
+                <APIThing term={`https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=10&gsrsearch='${this.state.Input}  (band)'`}/>?
+                </p>
+                <p>Ready to go on: {global.bandname}</p>
+                <p><a target="iframe_a" href={`https://en.wikipedia.org/wiki/${global.bandname}`}>Start reading</a></p>
+                <iframe src="demo_iframe.htm" name="iframe_a" height={fix(global.bandname)} width="90%" title="Iframe Example"></iframe>
             </>
         )
     }

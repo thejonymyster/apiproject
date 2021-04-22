@@ -3,7 +3,10 @@ import axios from 'axios'
 
 function safe(x){
     if (x) {
-        return x.replace(/\{/g,"")
+        let n = x.replace(/\{/g,"")
+        n = /(?<="title":").+?(?=")/.exec(n)
+        global.bandname = n
+        return n
     }
     return null
 }
