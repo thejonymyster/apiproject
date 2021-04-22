@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 
+function safe(x){
+    if (x) {
+        return x.replace(/\{/g,"")
+    }
+    return null
+}
+
 function APIThing({ term }) {
 
-    const [data, setData] = useState()
+    // const MyUrl = format(term)
+
+    const [Data, setData] = useState()
 
     useEffect(() => {
         const fetchData = async () => {
@@ -12,8 +21,11 @@ function APIThing({ term }) {
             setData(result.data)
         }
 
-        fetchData()
+        fetchData(term)
     })
+
+    // const n = data
+    
     //let wikioutput = []
     // axios.get(term).then((response) => {for (let i in response.data.query.pages) wikioutput.push(response.data.query.pages[i])})
     // console.log(wikioutput)
@@ -28,7 +40,7 @@ function APIThing({ term }) {
 
     return (
         <>
-           <p>{this.state.data}</p>
+           <p>{safe(JSON.stringify(Data))}</p>
     
         </>
     )

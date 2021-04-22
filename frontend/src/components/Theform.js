@@ -1,39 +1,50 @@
-// import something?? from './youtubeapi'
-// import 
-import Form from "./Forms"
+import APIThing from './wikitest'
+import Form from './Forms'
+import React, { useState, useEffect, Component} from 'react';
 
 class Theform extends Component {
 
-    const [data, setData] = useState()
-    const [example, setexample] = useState()
-    var myurl = ""
-    var wikisteal = ""
+    constructor(props) {
+        super(props)
+        this.state = {
+            Input: null
+        }
+    } 
+
+    // const [data, setData] = useState()
+    // const [example, setexample] = useState()
+    // var myurl = ""
+    // var wikisteal = ""
 
     // bind some shit here
 
-    handleChange() = e => {
+    handleChange() {
         //fix this obviously
-        this.state.setexample = youtubeapi(e) (or something???)
-        this.state.settheotherone = wikitest(e) ???
+        this.setState({Input: })
     }
 
-    handleSubmit() = e => {
+    // handleSubmit() = e => {
 
-    }
+    // }
 
-    return (
-        <>
+    render() {
+        return <>
             <Form 
-                handleChange={this.handleChange}
-                handleSubmit={this.handleSubmit}
-                Input={this.state.Input}              
+                handleChange={this.handleChange(event.target.value)}
+                handleSubmit={this.handleSubmit}           
             />
 
-            <iframe url= myurl></iframe>
+            {/* <iframe url= myurl></iframe> */}
 
             <article>
-                <wikitest input={this.state.input}/>
+                {/* <APIThing term={this.state.Input}/> */}
+                <APIThing term={"https://en.wikipedia.org/w/api.php?action=query&origin=*&format=json&generator=search&gsrnamespace=0&gsrlimit=10&gsrsearch=%27Musical%20Artists%27"}/>
+                {console.log(this.state,"this")}
             </article>
         </>
-    )
+    }
 }
+
+
+
+export default Theform;
