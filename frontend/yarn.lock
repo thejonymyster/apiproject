@@ -2519,6 +2519,11 @@
   dependencies:
     "follow-redirects" "^1.10.0"
 
+"axios@^0.7.0":
+  "integrity" "sha1-SJwmkETVBm36LGTHScsTGxdvSno="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.7.0.tgz"
+  "version" "0.7.0"
+
 "axobject-query@^2.2.0":
   "integrity" "sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA=="
   "resolved" "https://registry.npmjs.org/axobject-query/-/axobject-query-2.2.0.tgz"
@@ -11947,6 +11952,13 @@
   "integrity" "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="
   "resolved" "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   "version" "0.1.0"
+
+"youtube-api-search@^0.0.5":
+  "integrity" "sha1-ndaG3nYv8lBKkCiMV/zlo3BkMAI="
+  "resolved" "https://registry.npmjs.org/youtube-api-search/-/youtube-api-search-0.0.5.tgz"
+  "version" "0.0.5"
+  dependencies:
+    "axios" "^0.7.0"
 
 "ytsr@^3.4.0":
   "integrity" "sha512-/Ygk7lf+ZGI9fqp7us2PAyVtmNc5aGblQhtizOvU5L63L/9W7J9PQRoTq7XvGOMT/NWpYT6qhGFEror0UMw4FQ=="

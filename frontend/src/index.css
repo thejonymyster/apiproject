@@ -9,6 +9,16 @@ body {
   color: white;
 }
 
+.crowdpic{
+  background-image: url('./img/crowd.jpg');
+  background-size: 100% 100%;
+}
+
+.boxer{
+  background: black;
+  border: thin solid white;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -48,4 +58,21 @@ h1 {
 
 .spacer {
   height: 30px;
+}
+
+.whitebg {
+  background: white;
+  padding: 5px 5px 5px 5px;
+}
+
+.centerall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button{
+  height: 0px;
+  width: 0px;
+  display: none;
 }

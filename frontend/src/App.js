@@ -32,7 +32,7 @@ function App() {
       <TheContext.Provider value={{ user, setUser, history }}>
       <div className="App">
         <nav>
-          <Link to="/">Home Icon</Link>
+          {/* <Link to="/"><p class="whitebg">Home</p></Link> */}
         </nav>
         <Switch>
           <Route exact path="/" render={(props) => <Home {...props} />} />
